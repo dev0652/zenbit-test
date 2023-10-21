@@ -1,7 +1,14 @@
 import { styled } from 'styled-components';
 import { BaseButton } from 'styling/buttons';
+import { FaUserCircle } from 'react-icons/fa';
 
 export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 30px;
+`;
+
+export const User = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
@@ -9,8 +16,15 @@ export const Wrapper = styled.div`
   color: white;
 `;
 
+export const UserIcon = styled(FaUserCircle)`
+  height: 30px;
+  width: 30px;
+`;
+
 export const UserName = styled.p`
+  font-family: Lato;
   font-weight: bold;
+  font-size: 18px;
 `;
 
 export const LogoutButton = styled(BaseButton)`

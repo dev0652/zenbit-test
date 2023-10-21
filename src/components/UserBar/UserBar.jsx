@@ -2,7 +2,13 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAuth } from 'redux/selectors';
 
-import { LogoutButton, UserName, Wrapper } from './UserBar.styled';
+import {
+  UserIcon,
+  UserName,
+  Wrapper,
+  LogoutButton,
+  User,
+} from './UserBar.styled';
 import { logout } from 'redux/auth/operations';
 
 export default function UserBar() {
@@ -17,7 +23,10 @@ export default function UserBar() {
 
   return (
     <Wrapper>
-      <UserName>{name}</UserName>
+      <User>
+        <UserIcon />
+        <UserName>{name}</UserName>
+      </User>
       <LogoutButton type="button" onClick={handleLogout}>
         Sign Out
       </LogoutButton>
