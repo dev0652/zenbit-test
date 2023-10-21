@@ -3,24 +3,22 @@ import {
   ErrorNo,
   ErrorText,
   Image,
-  StyledLink,
+  HomePageLink,
   Wrapper,
+  ErrorTextWrapper,
 } from './Error404.styled';
-// import { Suspense } from 'react';
 
 export default function Error404() {
   return (
-    // <Suspense fallback={'Loading...'}>
     <Wrapper>
       <Image src={image404} alt="Pile of tangled filmstrip" />
 
-      <div>
+      <ErrorTextWrapper>
         <ErrorNo>Error 404</ErrorNo>
         <ErrorText>Sorry, we couldn't find this page</ErrorText>
 
-        <StyledLink to="/">Take me back to the homepage</StyledLink>
-      </div>
+        <HomePageLink to="/">Go back to the homepage</HomePageLink>
+      </ErrorTextWrapper>
     </Wrapper>
-    // </Suspense>
   );
 }

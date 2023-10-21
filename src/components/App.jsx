@@ -1,21 +1,18 @@
-import { lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import RestrictedRoute from './RestrictedRoute';
+import { lazy } from 'react';
 
+import SharedLayout from 'components/SharedLayout';
 import { containerStyle, toastOptions } from 'services/toastOptions';
 import { Toaster } from 'react-hot-toast';
 
-import RestrictedRoute from './RestrictedRoute';
-import PrivateRoute from './PrivateRoute';
-
-import SharedLayout from 'components/SharedLayout';
 import NotFound from 'pages/NotFound';
-import Register from 'pages/RegisterPage';
-import Login from 'pages/LoginPage';
 
 const HomePage = lazy(() => import('pages/HomePage'));
-const OpenDealsPage = lazy(() => import('pages/OpenDealsPage'));
+const Login = lazy(() => import('pages/LoginPage'));
+const Register = lazy(() => import('pages/RegisterPage'));
 
-// ################################################
+// ***************************************************
 
 export default function App() {
   return (
@@ -27,18 +24,9 @@ export default function App() {
           <Route index element={<HomePage />} />
 
           <Route
-            path="deals"
-            element={
-              <PrivateRoute redirectTo="/login">
-                <OpenDealsPage />
-              </PrivateRoute>
-            }
-          />
-
-          <Route
             path="register"
             element={
-              <RestrictedRoute redirectTo="/deals">
+              <RestrictedRoute redirectTo="/">
                 <Register />
               </RestrictedRoute>
             }
@@ -47,7 +35,7 @@ export default function App() {
           <Route
             path="login"
             element={
-              <RestrictedRoute redirectTo="/deals">
+              <RestrictedRoute redirectTo="/">
                 <Login />
               </RestrictedRoute>
             }

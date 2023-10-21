@@ -6,7 +6,7 @@ export const CardWrapper = styled.article`
   width: 630px;
   height: 400px;
 
-  border: 1px solid white;
+  border: none;
   border-radius: ${({ theme }) => theme.borderRadius.regular};
 
   display: flex;
@@ -14,13 +14,24 @@ export const CardWrapper = styled.article`
   gap: 5px;
 
   color: white;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   overflow: hidden;
 
-  &:hover {
-    box-shadow: inset 5rem 1rem black;
+  transition: transform 300ms;
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 4px 6px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
+    transform: scale(1.01);
   }
+`;
+
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 `;
 
 export const Meta = styled.div`

@@ -1,13 +1,11 @@
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-// import { Link } from 'react-router-dom';
+import { StyledLink } from 'styling/links';
 
 export const Wrapper = styled.div`
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   padding-top: 10vh;
 
@@ -19,25 +17,20 @@ export const Image = styled.img`
   max-width: 90vw;
 `;
 
+export const ErrorTextWrapper = styled.div`
+  color: ${({ theme }) => theme.colors.blackish};
+`;
+
 export const ErrorNo = styled.p`
   font-weight: bold;
   font-size: 3rem;
 `;
 
 export const ErrorText = styled.p`
-  /* font-weight: bold; */
   font-size: 1.6rem;
-  color: #6684ff;
+  margin-bottom: 1rem;
 `;
 
-export const StyledLink = styled(Link)`
-  color: Indigo;
+export const HomePageLink = styled(StyledLink)`
   font-size: 1.6rem;
-  display: block;
-  margin-top: 1rem;
-
-  :hover,
-  :focus {
-    color: darkOrange;
-  }
 `;

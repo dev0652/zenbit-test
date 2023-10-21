@@ -40,7 +40,8 @@ export const AppBar = styled.header`
   align-items: center;
   justify-content: end;
 
-  padding: 18px 80px;
+  height: ${({ theme }) => theme.sizes.headerHeight};
+  padding: 0 80px;
   background-color: ${({ theme }) => theme.colors.blackish};
 
   nav {

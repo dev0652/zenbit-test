@@ -1,4 +1,5 @@
-import { StyledLink, SwitchFormsText } from './SwitchForms.styled';
+import { StyledLink } from 'styling/links';
+import { SwitchFormsText } from './SwitchForms.styled';
 
 export default function SwitchForms({ condition }) {
   let message, linkTo, buttonText;

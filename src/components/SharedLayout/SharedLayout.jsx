@@ -1,7 +1,7 @@
-import { Suspense, useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAuth, selectDeals } from 'redux/selectors';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 
 import UserBar from 'components/UserBar';
 import AuthNav from 'components/AuthNav';
@@ -12,20 +12,13 @@ import loaderOptions from 'services/loaderOptions';
 import { AppBar, AppBarWrapper, Container } from './SharedLayout.styled';
 import { logout, refresh } from 'redux/auth/operations';
 
-// ##############################
+// ***************************************************
 
 export default function SharedLayout() {
   const { isLoading } = useSelector(selectDeals);
   const { isLoggedIn, isRefreshing, user, token } = useSelector(selectAuth);
 
-  const headerRef = useRef(null);
-  const [headerHeight, setHeaderHeight] = useState(null);
-
-  useEffect(() => {
-    const header = headerRef.current;
-    const { height } = header.getBoundingClientRect();
-    setHeaderHeight(height);
-  }, [headerHeight]);
+  // ******* Token check *******
 
   const dispatch = useDispatch();
 
@@ -36,12 +29,27 @@ export default function SharedLayout() {
         .catch(() => dispatch(logout())); // log out if token is outdated
   }, [dispatch, token, user]);
 
+  // ******* Location check *******
+
+  let location = useLocation();
+  const [isAuth, setIsAuth] = useState(false);
+
+  useEffect(() => {
+    const path = location.pathname;
+
+    if (path === '/login' || path === '/register') {
+      setIsAuth(true);
+    } else {
+      setIsAuth(false);
+    }
+  }, [location]);
+
   return (
     <>
-      <AppBar className="header" ref={headerRef}>
+      <AppBar>
         <Container>
           <AppBarWrapper>
-            {isLoggedIn ? <UserBar /> : <AuthNav />}
+            {isLoggedIn ? <UserBar /> : isAuth ? null : <AuthNav />}
           </AppBarWrapper>
         </Container>
       </AppBar>
@@ -54,7 +62,7 @@ export default function SharedLayout() {
             }
           >
             <main>
-              <Outlet context={[headerHeight]} />
+              <Outlet />
             </main>
           </Suspense>
         </Container>

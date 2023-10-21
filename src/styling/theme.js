@@ -8,15 +8,13 @@ export const theme = {
 
     primaryText: '#212121',
     blackish: '#172234',
-    secondaryText: 'gray',
-    highlightedText: 'whitesmoke',
   },
 
-  // spacing: value => `${value * 4}px`,
   borderRadius: {
     regular: '5px',
-    large: '30px',
   },
 
-  boxShadow: '0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.19)',
+  sizes: {
+    headerHeight: '80px',
+  },
 };

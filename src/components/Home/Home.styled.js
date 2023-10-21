@@ -1,17 +1,12 @@
 import { styled, css } from 'styled-components';
-import { Link } from 'react-router-dom';
 
 import bgPath from 'images/homebg.jpg';
 import bgRetinaPath from 'images/homebg@2x.jpg';
 
 export const Wrapper = styled.div`
-  ${props => {
-    const headerHeight = props.$headerHeight
-      ? `${props.$headerHeight}px`
-      : '0px';
-
+  ${({ theme }) => {
     return css`
-      height: calc(100vh - ${headerHeight});
+      height: calc(100vh - ${theme.sizes.headerHeight});
 
       display: flex;
       flex-direction: column;
@@ -22,7 +17,7 @@ export const Wrapper = styled.div`
 
       color: white;
 
-      background-color: #172234;
+      background-color: ${({ theme }) => theme.colors.blackish};
 
       background: linear-gradient(
           0deg,
@@ -66,8 +61,7 @@ export const HomeText = styled.p`
   text-align: center;
 `;
 
-export const StyledLink = styled(Link)`
-  /* font-size: 1.6rem; */
+export const Anchor = styled.a`
   padding: 10px 24px;
   border: 1px solid white;
   border-radius: 8px;

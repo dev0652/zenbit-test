@@ -4,15 +4,11 @@ import bgPath from 'images/authbg.jpg';
 import bgRetinaPath from 'images/authbg@2x.jpg';
 
 export const Page = styled.div`
-  ${props => {
-    const headerHeight = props.$headerHeight
-      ? `${props.$headerHeight}px`
-      : '0px';
-
+  ${({ theme }) => {
     return css`
       display: flex;
       width: 100%;
-      height: calc(100vh - ${headerHeight});
+      height: calc(100vh - ${theme.sizes.headerHeight});
     `;
   }}
 `;
@@ -39,5 +35,4 @@ export const FormSide = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
-  /* height: calc(100vh - 80px); */
 `;

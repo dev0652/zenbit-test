@@ -1,10 +1,4 @@
-import { CardWrapper, Details, Meta, Title } from './Card.styled';
-
-const formatPrice = number => `${number.toLocaleString('uk-UA')} Dhs`;
-
-const options = { style: 'unit', unit: 'percent' };
-
-const formatPercentage = number => `${number.toLocaleString('en-US', options)}`;
+import { CardWrapper, Details, Image, Meta, Title } from './Card.styled';
 
 export default function Card({ item }) {
   const {
@@ -14,6 +8,7 @@ export default function Card({ item }) {
     yield: yieldValue,
     sold,
     daysLeft,
+    imagePath,
   } = item;
 
   const formattedPrice = formatPrice(price);
@@ -21,11 +16,10 @@ export default function Card({ item }) {
 
   const formattedYield = formatPercentage(yieldValue);
   const formattedSold = formatPercentage(sold);
-  const pathToImage = 'images/rectangle-274.jpg';
 
   return (
     <CardWrapper>
-      <img src={pathToImage} alt="" />
+      <Image src={imagePath} alt={propertyName} />
       <Meta>
         <Title>{propertyName}</Title>
         <Details>
@@ -39,3 +33,7 @@ export default function Card({ item }) {
     </CardWrapper>
   );
 }
+
+const formatPrice = number => `${number.toLocaleString('uk-UA')} Dhs`;
+const options = { style: 'unit', unit: 'percent' };
+const formatPercentage = number => `${number.toLocaleString('en-US', options)}`;

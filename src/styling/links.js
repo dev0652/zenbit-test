@@ -1,14 +1,17 @@
 import { styled } from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
-export const BaseCardLink = styled.a`
+export const StyledLink = styled(Link)`
+  color: ${({ theme }) => theme.colors.accent};
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.secondaryText};
-  font-size: 1.3rem;
 
   &:hover,
   &:focus-visible {
-    color: ${({ theme }) => theme.colors.accent};
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: ${({ theme }) => theme.colors.accentDark};
   }
 `;
 
