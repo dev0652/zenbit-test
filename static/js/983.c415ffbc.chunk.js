@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkzenbit_test=self.webpackChunkzenbit_test||[]).push([[983],{3983:function(e,t,n){n.r(t);var s=n(7468),i=n(6907),r=n(3329);t.default=function(){return(0,r.jsxs)(r.Fragment,{children:[(0,r.jsxs)(i.ql,{children:[(0,r.jsx)("title",{children:"Home"}),(0,r.jsx)("meta",{name:"description",content:"Find best property investment properties at ZB Real Estate"})]}),(0,r.jsx)(s.SK,{})]})}}}]);
+//# sourceMappingURL=983.c415ffbc.chunk.js.map
