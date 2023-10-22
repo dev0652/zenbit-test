@@ -3,6 +3,7 @@ import * as api from 'services/api';
 
 // Operation generator
 const generateOperation = actionType => {
+  //
   // 1. Declare the payloadCreator generator function
   const payloadCreator =
     type =>

@@ -10,7 +10,7 @@ const HomePage = () => {
         <title>Home</title>
         <meta
           name="description"
-          content="Find best property investment deals at ZB Real Estate"
+          content="Find best property investment properties at ZB Real Estate"
         />
       </Helmet>
 

@@ -41,6 +41,6 @@ export const clearAuthHeader = () => {
 // ############### Open Deals ##########################
 
 export const fetchProperties = async () => {
-  const { data } = await axios.get('/properties');
+  const { data } = await axios.get('/properties/fetch');
   return data;
 };

@@ -1,35 +1,23 @@
 import { useCallback, useEffect, useState } from 'react';
-// import { properties } from 'data';
 import { EmptyResults, Gallery, Loader } from 'components';
 import { fetchProperties } from 'services/api';
 
 import { OpenDealsSection, SectionTitle } from './OpenDeals.styled';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectProperties } from 'redux/selectors';
+import { fetchPropertiesOp } from 'redux/properties/operations';
 
 // ******** Component *************************
 
 export const OpenDeals = () => {
-  const [isError, setIsError] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
+  const { items, isLoading, error } = useSelector(selectProperties);
 
-  const [properties, setProperties] = useState(null);
-
-  const getAllProperties = useCallback(async () => {
-    try {
-      setIsError(false);
-      setIsLoading(true);
-      const data = await fetchProperties();
-      setProperties(data);
-    } catch (error) {
-      setIsError(true);
-    } finally {
-      setIsLoading(false);
-    }
-  }, []);
-
-  // Get all open deals
   useEffect(() => {
-    getAllProperties();
-  }, [getAllProperties]);
+    dispatch(fetchPropertiesOp())
+      .unwrap()
+      .catch(({ message }) => console.error(message));
+  }, [dispatch]);
 
   return (
     <>
@@ -38,10 +26,10 @@ export const OpenDeals = () => {
       <OpenDealsSection id="openDeals">
         <SectionTitle>Open Deals</SectionTitle>
 
-        {properties ? (
-          <Gallery data={properties} />
+        {items.length > 0 ? (
+          <Gallery data={items} />
         ) : (
-          <EmptyResults isError={isError} />
+          <EmptyResults isError={!!error} />
         )}
       </OpenDealsSection>
     </>

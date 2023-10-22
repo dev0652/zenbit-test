@@ -1,6 +1,6 @@
 import { Suspense, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectAuth, selectDeals } from 'redux/selectors';
+import { selectAuth, selectProperties } from 'redux/selectors';
 import { Outlet, useLocation } from 'react-router-dom';
 
 import { UserBar, AuthNav } from 'components';
@@ -14,7 +14,7 @@ import { logout, refresh } from 'redux/auth/operations';
 // ***************************************************
 
 export const SharedLayout = () => {
-  const { isLoading } = useSelector(selectDeals);
+  const { isLoading } = useSelector(selectProperties);
   const { isLoggedIn, isRefreshing, user, token } = useSelector(selectAuth);
 
   // ******* Token check *******

@@ -11,7 +11,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import { dealsReducer } from './deals/slice';
+import { propertiesReducer } from './properties/slice';
 import { authReducer } from './auth/slice';
 
 // ###############################################
@@ -28,7 +28,7 @@ const authPersistConfig = {
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
-    deals: dealsReducer,
+    properties: propertiesReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
