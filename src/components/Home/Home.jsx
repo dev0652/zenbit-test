@@ -1,7 +1,10 @@
 import { OpenDeals } from 'components';
 import { Anchor, HomeText, HomeTitle, Wrapper } from './Home.styled';
+import { useSelector } from 'react-redux';
+import { selectProperties } from 'redux/selectors';
 
 export const Home = () => {
+  const { isLoading } = useSelector(selectProperties);
   return (
     <>
       <Wrapper>
@@ -16,7 +19,7 @@ export const Home = () => {
         <Anchor href="#openDeals">Get Started</Anchor>
       </Wrapper>
 
-      <OpenDeals />
+      {!isLoading && <OpenDeals />}
     </>
   );
 };
