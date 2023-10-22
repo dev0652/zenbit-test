@@ -1,8 +1,6 @@
 import axios from 'axios';
 
-// Backend: https://mockapi.io/projects/648a37bd5fa58521cab1030d
-
-axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
+axios.defaults.baseURL = 'https://zenbit-backend-fvnb.onrender.com/api';
 
 // ############### User ##########################
 
@@ -40,24 +38,9 @@ export const clearAuthHeader = () => {
   axios.defaults.headers.common.Authorization = '';
 };
 
-// ############### Contacts ##########################
+// ############### Open Deals ##########################
 
-export const fetchDeals = async () => {
-  const { data } = await axios.get('/deals');
-  return data;
-};
-
-export const addContact = async newContact => {
-  const { data } = await axios.post('/deals', newContact);
-  return data;
-};
-
-export const deleteContact = async id => {
-  const { data } = await axios.delete(`/deals/${id}`);
-  return data;
-};
-
-export const editContact = async ({ id, editedContact }) => {
-  const { data } = await axios.patch(`/deals/${id}`, editedContact);
+export const fetchProperties = async () => {
+  const { data } = await axios.get('/properties');
   return data;
 };
