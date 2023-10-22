@@ -4,13 +4,15 @@ import bgPath from 'images/homebg.jpg';
 import bgRetinaPath from 'images/homebg@2x.jpg';
 import { Container } from 'components/SharedLayout/SharedLayout.styled';
 
+import { breakpoints } from 'styling/breakpoints';
+const { tablet, desktop, desktopWide } = breakpoints;
+
 export const Hero = styled.section`
   ${({ theme }) => {
     return css`
       height: calc(100vh - ${theme.sizes.headerHeight});
 
       background-color: ${({ theme }) => theme.colors.blackish};
-
       background: linear-gradient(
           0deg,
           rgba(23 34 52 / 60%),
@@ -51,7 +53,18 @@ export const HeroContainer = styled(Container)`
 `;
 
 export const HomeTitle = styled.h1`
-  font-size: 64px;
+  font-size: 36px;
+
+  @media screen and (min-width: ${tablet}) {
+    font-size: 42px;
+  }
+  @media screen and (min-width: ${desktop}) {
+    font-size: 54px;
+  }
+  @media screen and (min-width: ${desktopWide}) {
+    font-size: 64px;
+  }
+
   font-weight: 700;
   line-height: 125%;
   text-align: center;
@@ -59,10 +72,19 @@ export const HomeTitle = styled.h1`
 
 export const HomeText = styled.p`
   font-family: 'Lato', sans-serif;
-  font-size: 24px;
   line-height: 133.333%;
   letter-spacing: -0.48px;
   text-align: center;
+
+  font-size: 19px;
+
+  @media screen and (min-width: ${tablet}) {
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: ${desktopWide}) {
+    font-size: 24px;
+  }
 `;
 
 export const Anchor = styled.a`

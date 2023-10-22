@@ -1,10 +1,16 @@
 import { styled } from 'styled-components';
+import { breakpoints } from 'styling/breakpoints';
+const { tablet, desktop } = breakpoints;
 
 export const CardWrapper = styled.article`
   position: relative;
 
-  width: 630px;
+  width: 100%;
   height: 400px;
+
+  @media screen and (min-width: ${desktop}) {
+    width: 630px;
+  }
 
   border: none;
   border-radius: ${({ theme }) => theme.borderRadius.regular};
@@ -49,7 +55,11 @@ export const Title = styled.h3`
 `;
 
 export const Details = styled.ul`
-  columns: 3;
+  columns: 2;
+
+  @media screen and (min-width: ${tablet}) {
+    columns: 3;
+  }
 
   font-family: Lato;
   font-size: 18px;
