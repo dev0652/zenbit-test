@@ -5,26 +5,26 @@ axios.defaults.baseURL = 'https://zenbit-backend-fvnb.onrender.com/api';
 // ############### User ##########################
 
 export const register = async credentials => {
-  const { data } = await axios.post('/users/signup', credentials);
+  const { data } = await axios.post('/auth/signup', credentials);
   setAuthHeader(data.token);
   return data;
 };
 
 export const login = async credentials => {
-  const { data } = await axios.post('/users/login', credentials);
+  const { data } = await axios.post('/auth/login', credentials);
   setAuthHeader(data.token);
   return data;
 };
 
 export const logout = async () => {
-  const { data } = await axios.post('/users/logout');
+  const { data } = await axios.post('/auth/logout');
   clearAuthHeader();
   return data;
 };
 
 export const refresh = async token => {
   setAuthHeader(token);
-  const { data } = await axios.get('/users/current');
+  const { data } = await axios.get('/auth/current');
   return data;
 };
 
