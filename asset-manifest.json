@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/zenbit-test/static/css/main.fbf590c3.css",
-    "main.js": "/zenbit-test/static/js/main.f4e98ead.js",
+    "main.js": "/zenbit-test/static/js/main.f43411ae.js",
     "static/js/983.8d6406fe.chunk.js": "/zenbit-test/static/js/983.8d6406fe.chunk.js",
     "static/js/637.be476b96.chunk.js": "/zenbit-test/static/js/637.be476b96.chunk.js",
     "static/js/376.73b1913d.chunk.js": "/zenbit-test/static/js/376.73b1913d.chunk.js",
@@ -13,13 +13,13 @@
     "static/media/placeholder-image.jpg": "/zenbit-test/static/media/placeholder-image.69bde94f2c4f93f567fb.jpg",
     "index.html": "/zenbit-test/index.html",
     "main.fbf590c3.css.map": "/zenbit-test/static/css/main.fbf590c3.css.map",
-    "main.f4e98ead.js.map": "/zenbit-test/static/js/main.f4e98ead.js.map",
+    "main.f43411ae.js.map": "/zenbit-test/static/js/main.f43411ae.js.map",
     "983.8d6406fe.chunk.js.map": "/zenbit-test/static/js/983.8d6406fe.chunk.js.map",
     "637.be476b96.chunk.js.map": "/zenbit-test/static/js/637.be476b96.chunk.js.map",
     "376.73b1913d.chunk.js.map": "/zenbit-test/static/js/376.73b1913d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fbf590c3.css",
-    "static/js/main.f4e98ead.js"
+    "static/js/main.f43411ae.js"
   ]
 }
