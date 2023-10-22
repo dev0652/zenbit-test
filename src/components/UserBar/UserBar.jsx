@@ -16,6 +16,7 @@ export const UserBar = () => {
   } = useSelector(selectAuth);
 
   const dispatch = useDispatch();
+
   const handleLogout = () => {
     dispatch(logout());
   };
@@ -24,7 +25,7 @@ export const UserBar = () => {
     <Wrapper>
       <User>
         <UserIcon />
-        <UserName>{name}</UserName>
+        <UserName>{name || 'Signed in'}</UserName>
       </User>
       <LogoutButton type="button" onClick={handleLogout}>
         Sign Out

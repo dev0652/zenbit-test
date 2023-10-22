@@ -6,10 +6,7 @@ const LoginPage = () => {
     <>
       <Helmet>
         <title>Login</title>
-        <meta
-          name="description"
-          content="Log in to view your personalized items"
-        />
+        <meta name="description" content="Log in to be able to accept deals" />
       </Helmet>
 
       <AuthBody>

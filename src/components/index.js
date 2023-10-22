@@ -8,7 +8,6 @@ export { SwitchForms } from './Forms/SwitchForms';
 export { TextField } from './Forms/TextField';
 export { Gallery } from './Gallery';
 export { Home } from './Home';
-export { Loader } from './Loader';
 export { OpenDeals } from './OpenDeals';
 export { SharedLayout } from './SharedLayout';
 export { UserBar } from './UserBar';

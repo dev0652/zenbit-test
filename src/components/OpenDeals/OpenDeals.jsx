@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { EmptyResults, Gallery, Loader } from 'components';
+import { EmptyResults, Gallery } from 'components';
 
 import { OpenDealsSection, SectionTitle } from './OpenDeals.styled';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,18 +10,18 @@ import { fetchPropertiesOp } from 'redux/properties/operations';
 
 export const OpenDeals = () => {
   const dispatch = useDispatch();
-  const { items, isLoading, error } = useSelector(selectProperties);
+  const { items, error } = useSelector(selectProperties);
 
   useEffect(() => {
-    dispatch(fetchPropertiesOp())
-      .unwrap()
-      .catch(({ message }) => console.error(message));
-  }, [dispatch]);
+    if (items.length === 0) {
+      dispatch(fetchPropertiesOp())
+        .unwrap()
+        .catch(({ message }) => console.error(message));
+    }
+  }, [dispatch, items.length]);
 
   return (
     <>
-      {isLoading && <Loader />}
-
       <OpenDealsSection id="openDeals">
         <SectionTitle>Open Deals</SectionTitle>
 

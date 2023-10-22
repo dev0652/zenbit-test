@@ -53,7 +53,7 @@ export const AuthDataForm = ({ formType }) => {
     dispatch(operation(credentials))
       .unwrap()
       .then(() => toast.success(toastMessage))
-      .catch(() => toast.error('Error authenticating. Please try again later'));
+      .catch(() => toast.error('Authentication error'));
 
     form.reset();
   };
