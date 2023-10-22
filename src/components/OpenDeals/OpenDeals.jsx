@@ -1,6 +1,5 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { EmptyResults, Gallery, Loader } from 'components';
-import { fetchProperties } from 'services/api';
 
 import { OpenDealsSection, SectionTitle } from './OpenDeals.styled';
 import { useDispatch, useSelector } from 'react-redux';
