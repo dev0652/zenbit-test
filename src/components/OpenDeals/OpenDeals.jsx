@@ -5,6 +5,7 @@ import { OpenDealsSection, SectionTitle } from './OpenDeals.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectProperties } from 'redux/selectors';
 import { fetchPropertiesOp } from 'redux/properties/operations';
+import { Container } from 'components/SharedLayout/SharedLayout.styled';
 
 // ******** Component *************************
 
@@ -21,8 +22,8 @@ export const OpenDeals = () => {
   }, [dispatch, items.length]);
 
   return (
-    <>
-      <OpenDealsSection id="openDeals">
+    <OpenDealsSection id="openDeals">
+      <Container>
         <SectionTitle>Open Deals</SectionTitle>
 
         {items.length > 0 ? (
@@ -30,7 +31,7 @@ export const OpenDeals = () => {
         ) : (
           <EmptyResults isError={!!error} />
         )}
-      </OpenDealsSection>
-    </>
+      </Container>
+    </OpenDealsSection>
   );
 };

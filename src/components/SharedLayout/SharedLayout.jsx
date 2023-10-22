@@ -54,17 +54,13 @@ export const SharedLayout = () => {
       </AppBar>
 
       {!isRefreshing && (
-        <Container>
-          <Suspense
-            fallback={
-              isLoading ? Loading.dots(loaderOptions) : Loading.remove()
-            }
-          >
-            <main>
-              <Outlet />
-            </main>
-          </Suspense>
-        </Container>
+        <Suspense
+          fallback={isLoading ? Loading.dots(loaderOptions) : Loading.remove()}
+        >
+          <main>
+            <Outlet />
+          </main>
+        </Suspense>
       )}
     </>
   );

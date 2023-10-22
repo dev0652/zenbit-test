@@ -2,20 +2,12 @@ import { styled, css } from 'styled-components';
 
 import bgPath from 'images/homebg.jpg';
 import bgRetinaPath from 'images/homebg@2x.jpg';
+import { Container } from 'components/SharedLayout/SharedLayout.styled';
 
-export const Wrapper = styled.div`
+export const Hero = styled.section`
   ${({ theme }) => {
     return css`
       height: calc(100vh - ${theme.sizes.headerHeight});
-
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-      justify-content: center;
-      padding-bottom: 20vh;
-
-      color: white;
 
       background-color: ${({ theme }) => theme.colors.blackish};
 
@@ -45,6 +37,18 @@ export const Wrapper = styled.div`
 `;
 
 //https://css-tricks.com/snippets/css/retina-display-media-query/
+
+export const HeroContainer = styled(Container)`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20vh;
+
+  height: 100%;
+  color: white;
+`;
 
 export const HomeTitle = styled.h1`
   font-size: 64px;
