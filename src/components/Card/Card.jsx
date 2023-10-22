@@ -5,7 +5,6 @@ import { useState } from 'react';
 
 export const Card = ({ item }) => {
   const [isImageError, setIsImageError] = useState(false);
-  console.log('isImageError: ', isImageError);
 
   const {
     propertyName,
