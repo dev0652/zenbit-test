@@ -1,17 +1,21 @@
-import Card from 'components/Card';
+import { Card } from 'components';
 import { CardList } from './Gallery.styled';
+import PropTypes from 'prop-types';
 
-export default function Gallery({ data }) {
+export const Gallery = ({ data }) => {
   return (
     <CardList>
       {data.map(item => (
-        <li key={item.id}>
-          <Card
-            item={item}
-            // onLoadComplete={onLoadComplete}
-          />
+        <li key={item._id}>
+          <Card item={item} />
         </li>
       ))}
     </CardList>
   );
-}
+};
+
+// ****** PropTypes *******************************
+
+Gallery.propTypes = {
+  data: PropTypes.array,
+};

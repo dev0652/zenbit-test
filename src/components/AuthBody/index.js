@@ -1,1 +1,1 @@
-export { default } from './AuthBody';
+export { AuthBody } from './AuthBody';

@@ -1,5 +1,8 @@
 import { useDispatch } from 'react-redux';
 import { login, register } from 'redux/auth/operations';
+import { toast } from 'react-hot-toast';
+
+import { TextField, SwitchForms } from 'components';
 
 import {
   FieldsWrapper,
@@ -10,13 +13,12 @@ import {
   Title,
   ForgotPassword,
 } from './AuthDataForm.styled';
-import { toast } from 'react-hot-toast';
-import SwitchForms from '../SwitchForms/SwitchForms';
-import { TextField } from '../TextField';
 
-// ################################################
+import PropTypes from 'prop-types';
 
-export default function AuthDataForm({ formType }) {
+// ***************************************************
+
+export const AuthDataForm = ({ formType }) => {
   const dispatch = useDispatch();
 
   const isSignUp = formType === 'register';
@@ -86,4 +88,10 @@ export default function AuthDataForm({ formType }) {
       </section>
     </AuthFormContainer>
   );
-}
+};
+
+// ****** PropTypes *******************************
+
+AuthDataForm.propTypes = {
+  formType: PropTypes.string,
+};

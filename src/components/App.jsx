@@ -1,20 +1,20 @@
 import { Routes, Route } from 'react-router-dom';
-import RestrictedRoute from './RestrictedRoute';
+import { RestrictedRoute } from './RestrictedRoute';
 import { lazy } from 'react';
 
-import SharedLayout from 'components/SharedLayout';
 import { containerStyle, toastOptions } from 'services/toastOptions';
 import { Toaster } from 'react-hot-toast';
 
-import NotFound from 'pages/NotFound';
+import { SharedLayout } from 'components';
+import { NotFound } from 'pages/NotFound';
 
 const HomePage = lazy(() => import('pages/HomePage'));
-const Login = lazy(() => import('pages/LoginPage'));
-const Register = lazy(() => import('pages/RegisterPage'));
+const LoginPage = lazy(() => import('pages/LoginPage'));
+const RegisterPage = lazy(() => import('pages/RegisterPage'));
 
 // ***************************************************
 
-export default function App() {
+export const App = () => {
   return (
     <>
       <Toaster containerStyle={containerStyle} toastOptions={toastOptions} />
@@ -27,7 +27,7 @@ export default function App() {
             path="register"
             element={
               <RestrictedRoute redirectTo="/">
-                <Register />
+                <RegisterPage />
               </RestrictedRoute>
             }
           />
@@ -36,7 +36,7 @@ export default function App() {
             path="login"
             element={
               <RestrictedRoute redirectTo="/">
-                <Login />
+                <LoginPage />
               </RestrictedRoute>
             }
           />
@@ -46,4 +46,4 @@ export default function App() {
       </Routes>
     </>
   );
-}
+};

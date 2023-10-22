@@ -13,7 +13,6 @@ export const CardWrapper = styled.article`
   flex-direction: column;
   gap: 5px;
 
-  color: white;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   overflow: hidden;
 

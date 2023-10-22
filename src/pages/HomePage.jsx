@@ -1,9 +1,9 @@
-import Home from 'components/Home';
+import { Home } from 'components';
 import { Helmet } from 'react-helmet-async';
 
 // ***************************************************
 
-export default function HomePage() {
+const HomePage = () => {
   return (
     <>
       <Helmet>
@@ -17,4 +17,6 @@ export default function HomePage() {
       <Home />
     </>
   );
-}
+};
+
+export default HomePage;

@@ -1,1 +1,1 @@
-export { default } from './OpenDeals';
+export { OpenDeals } from './OpenDeals';

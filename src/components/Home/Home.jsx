@@ -1,7 +1,7 @@
-import OpenDeals from 'components/OpenDeals';
+import { OpenDeals } from 'components';
 import { Anchor, HomeText, HomeTitle, Wrapper } from './Home.styled';
 
-export default function Home() {
+export const Home = () => {
   return (
     <>
       <Wrapper>
@@ -19,4 +19,4 @@ export default function Home() {
       <OpenDeals />
     </>
   );
-}
+};

@@ -1,7 +1,7 @@
-import Error404 from 'components/Error404';
+import { Error404 } from 'components';
 import { Helmet } from 'react-helmet-async';
 
-export default function NotFound() {
+export const NotFound = () => {
   return (
     <>
       <Helmet>
@@ -12,4 +12,4 @@ export default function NotFound() {
       <Error404 />
     </>
   );
-}
+};

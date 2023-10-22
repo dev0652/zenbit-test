@@ -1,10 +1,8 @@
 import { Helmet } from 'react-helmet-async';
-
-import AuthDataForm from 'components/Forms/AuthDataForm';
-import AuthBody from 'components/AuthBody/AuthBody';
+import { AuthDataForm, AuthBody } from 'components';
 import { FlexCentered } from 'styling/positioning';
 
-export default function Register() {
+const RegisterPage = () => {
   return (
     <>
       <Helmet>
@@ -22,4 +20,6 @@ export default function Register() {
       </FlexCentered>
     </>
   );
-}
+};
+
+export default RegisterPage;

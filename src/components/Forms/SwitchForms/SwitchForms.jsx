@@ -1,7 +1,9 @@
 import { StyledLink } from 'styling/links';
 import { SwitchFormsText } from './SwitchForms.styled';
 
-export default function SwitchForms({ condition }) {
+import PropTypes from 'prop-types';
+
+export const SwitchForms = ({ condition }) => {
   let message, linkTo, buttonText;
 
   if (condition) {
@@ -19,4 +21,10 @@ export default function SwitchForms({ condition }) {
       {message} <StyledLink to={linkTo}>{buttonText}</StyledLink>
     </SwitchFormsText>
   );
-}
+};
+
+// ****** PropTypes *******************************
+
+SwitchForms.propTypes = {
+  condition: PropTypes.bool,
+};

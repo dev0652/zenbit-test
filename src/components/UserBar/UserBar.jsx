@@ -1,4 +1,3 @@
-import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAuth } from 'redux/selectors';
 
@@ -11,7 +10,7 @@ import {
 } from './UserBar.styled';
 import { logout } from 'redux/auth/operations';
 
-export default function UserBar() {
+export const UserBar = () => {
   const {
     user: { name },
   } = useSelector(selectAuth);
@@ -32,4 +31,4 @@ export default function UserBar() {
       </LogoutButton>
     </Wrapper>
   );
-}
+};

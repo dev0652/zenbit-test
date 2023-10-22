@@ -1,9 +1,7 @@
 import { Helmet } from 'react-helmet-async';
+import { AuthDataForm, AuthBody } from 'components';
 
-import AuthDataForm from 'components/Forms/AuthDataForm';
-import AuthBody from 'components/AuthBody';
-
-export default function LoginPage() {
+const LoginPage = () => {
   return (
     <>
       <Helmet>
@@ -19,4 +17,6 @@ export default function LoginPage() {
       </AuthBody>
     </>
   );
-}
+};
+
+export default LoginPage;

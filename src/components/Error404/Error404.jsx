@@ -8,7 +8,7 @@ import {
   ErrorTextWrapper,
 } from './Error404.styled';
 
-export default function Error404() {
+export const Error404 = () => {
   return (
     <Wrapper>
       <Image src={image404} alt="Pile of tangled filmstrip" />
@@ -21,4 +21,4 @@ export default function Error404() {
       </ErrorTextWrapper>
     </Wrapper>
   );
-}
+};

@@ -11,7 +11,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'styling/theme';
 
-import App from 'components/App';
+import { App } from 'components/App';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(

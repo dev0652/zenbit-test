@@ -1,5 +1,5 @@
-import PropTypes from 'prop-types';
 import { Field, Label } from './TextField.styled';
+import PropTypes from 'prop-types';
 
 export const TextField = props => {
   const { name, type = 'text', label = null } = props;
@@ -25,7 +25,7 @@ export const TextField = props => {
 // ****** PropTypes *******************************
 
 TextField.propTypes = {
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   type: PropTypes.string,
   label: PropTypes.string,
 };

@@ -3,7 +3,7 @@ import { LoaderWrapper, Overlay } from './Loader.styled';
 
 import { theme } from 'styling/theme';
 
-export default function Loader() {
+export const Loader = () => {
   return (
     <Overlay>
       <LoaderWrapper>
@@ -20,4 +20,4 @@ export default function Loader() {
       </LoaderWrapper>
     </Overlay>
   );
-}
+};

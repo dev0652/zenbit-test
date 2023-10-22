@@ -3,8 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectAuth, selectDeals } from 'redux/selectors';
 import { Outlet, useLocation } from 'react-router-dom';
 
-import UserBar from 'components/UserBar';
-import AuthNav from 'components/AuthNav';
+import { UserBar, AuthNav } from 'components';
 
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import loaderOptions from 'services/loaderOptions';
@@ -14,7 +13,7 @@ import { logout, refresh } from 'redux/auth/operations';
 
 // ***************************************************
 
-export default function SharedLayout() {
+export const SharedLayout = () => {
   const { isLoading } = useSelector(selectDeals);
   const { isLoggedIn, isRefreshing, user, token } = useSelector(selectAuth);
 
@@ -69,4 +68,4 @@ export default function SharedLayout() {
       )}
     </>
   );
-}
+};
