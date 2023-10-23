@@ -7,7 +7,7 @@ import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import loaderOptions from 'services/loaderOptions';
 
 import { logout, refresh } from 'redux/auth/operations';
-import Header from 'components/Header/Header';
+import { Header } from 'components';
 
 // ***************************************************
 

@@ -5,9 +5,10 @@ import { selectAuth } from 'redux/selectors';
 import PropTypes from 'prop-types';
 
 import { AuthButtons, UserBar } from 'components';
-import { RxHamburgerMenu as BurgerIcon } from 'react-icons/rx';
-import { AiOutlineClose as CloseIcon } from 'react-icons/ai';
+// import { RxHamburgerMenu as BurgerIcon } from 'react-icons/rx';
+// import { AiOutlineClose as CloseIcon } from 'react-icons/ai';
 import { MobileMenu } from 'components/Header/Header.styled';
+import { BurgerButton, BurgerIcon, CloseIcon } from './UserMenu.styled';
 
 export const UserMenu = ({ isMobile }) => {
   const { isLoggedIn } = useSelector(selectAuth);
@@ -43,9 +44,9 @@ export const UserMenu = ({ isMobile }) => {
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   const burgerMenuButton = (
-    <button type="button" onClick={toggleMobileMenu}>
+    <BurgerButton type="button" onClick={toggleMobileMenu}>
       {mobileMenuVisible ? <CloseIcon /> : <BurgerIcon />}
-    </button>
+    </BurgerButton>
   );
 
   const userMenu = isLoggedIn ? (
@@ -58,7 +59,7 @@ export const UserMenu = ({ isMobile }) => {
 
   return (
     <>
-      {isMobile ? burgerMenuButton : userMenu}
+      {isMobile && !isAuth ? burgerMenuButton : userMenu}
 
       {isMobile && <MobileMenu open={mobileMenuVisible}>{userMenu}</MobileMenu>}
     </>

@@ -2,10 +2,20 @@ import { styled } from 'styled-components';
 import { BaseButton } from 'styling/buttons';
 import { FaUserCircle } from 'react-icons/fa';
 
+import { breakpoints } from 'styling/breakpoints';
+const { tablet } = breakpoints;
+
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 30px;
+
+  flex-direction: column;
+  gap: 60px;
+
+  @media screen and (min-width: ${tablet}) {
+    flex-direction: row;
+    gap: 30px;
+  }
 `;
 
 export const User = styled.div`

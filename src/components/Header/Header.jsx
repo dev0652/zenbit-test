@@ -1,23 +1,23 @@
 import useWindowDimensions from 'hooks/useWindowDimensions';
 import { Container } from 'components/SharedLayout/SharedLayout.styled';
-import { AppBar, HeaderWrapper } from './Header.styled';
+import { AppBar, HeaderWrapper, Logo } from './Header.styled';
 import { UserMenu } from 'components';
 
-const Header = () => {
+import { breakpoints } from 'styling/breakpoints';
+
+export const Header = () => {
   //
   const { width } = useWindowDimensions();
-  const isMobileWidth = width < 600;
+  const isMobileWidth = width < Number.parseInt(breakpoints.tablet);
 
   return (
     <AppBar>
       <Container>
         <HeaderWrapper>
-          <div style={{ color: 'yellowgreen' }}>Logo{width}</div>
+          <Logo>My Logo</Logo>
           <UserMenu isMobile={isMobileWidth} />
         </HeaderWrapper>
       </Container>
     </AppBar>
   );
 };
-
-export default Header;

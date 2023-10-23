@@ -3,29 +3,46 @@ import { styled, css } from 'styled-components';
 import bgPath from 'images/authbg.jpg';
 import bgRetinaPath from 'images/authbg@2x.jpg';
 
+import { breakpoints } from 'styling/breakpoints';
+const { desktop } = breakpoints;
+
 export const Page = styled.div`
   ${({ theme }) => {
     return css`
       display: flex;
-      width: 100%;
+      flex-direction: column;
       height: calc(100vh - ${theme.sizes.headerHeight});
+
+      @media screen and (min-width: ${desktop}) {
+        flex-direction: row;
+        width: 100%;
+      }
     `;
   }}
 `;
 
 export const BannerSide = styled.div`
-  flex-grow: 1;
+  display: none;
 
-  background-color: #172234;
-  background: url(${bgPath});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  @media screen and (min-width: ${desktop}) {
+    display: block;
+    flex-grow: 1;
 
-  /* for retina displays */
-  @media only screen and (min-resolution: 192dpi),
-    only screen and (min-resolution: 2dppx) {
-    background: url(${bgRetinaPath});
+    background-color: #172234;
+    background: url(${bgPath});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    /* for retina displays */
+    @media only screen and (min-resolution: 192dpi),
+      only screen and (min-resolution: 2dppx) {
+      background: url(${bgRetinaPath});
+
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
   }
 `;
 

@@ -4,6 +4,9 @@ export { AuthDataForm } from './authForms/AuthDataForm';
 export { SwitchForms } from './authForms/SwitchForms';
 export { TextField } from './authForms/TextField';
 
+// Header
+export { Header } from './Header';
+
 // Auth and user menu group in header
 export { UserMenu } from './authMenuGroup/UserMenu';
 export { UserBar } from './authMenuGroup/UserBar';

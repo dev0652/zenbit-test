@@ -22,5 +22,6 @@ export const Container = styled.div`
   @media screen and (min-width: ${desktopWide}) {
     width: ${desktopWide};
   }
+
   width: 100%;
 `;

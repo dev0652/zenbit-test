@@ -1,31 +1,21 @@
 import { styled, css } from 'styled-components';
+import { breakpoints } from 'styling/breakpoints';
+const { tablet, desktop } = breakpoints;
 
-export const AppBarWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-`;
+export const Logo = styled.p`
+  color: ${({ theme }) => theme.colors.accent};
+  line-height: 121.429%;
+  font-family: Lato;
+  font-weight: bold;
 
-export const HeaderWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  z-index: 21;
+  font-size: 22px;
 
-  @media screen and (min-width: 1440px) {
-    padding-top: 22.5px;
-    padding-bottom: 22.5px;
+  @media screen and (min-width: ${tablet}) {
+    font-size: 24px;
   }
-`;
 
-export const RightWrapper = styled.div`
-  display: flex;
-  gap: 14px;
-
-  @media screen and (min-width: 768px) {
-    gap: 24px;
+  @media screen and (min-width: ${desktop}) {
+    font-size: 28px;
   }
 `;
 
@@ -34,6 +24,7 @@ export const AppBar = styled.header`
   top: 0;
   left: 0;
   z-index: 100;
+
   width: 100%;
 
   display: flex;
@@ -41,8 +32,17 @@ export const AppBar = styled.header`
   justify-content: end;
 
   height: ${({ theme }) => theme.sizes.headerHeight};
-  padding: 0 80px;
   background-color: ${({ theme }) => theme.colors.blackish};
+
+  padding: 0 20px;
+
+  @media screen and (min-width: ${tablet}) {
+    padding: 0 40px;
+  }
+
+  @media screen and (min-width: ${desktop}) {
+    padding: 0 80px;
+  }
 
   nav {
     display: flex;
@@ -50,16 +50,20 @@ export const AppBar = styled.header`
   }
 `;
 
+export const HeaderWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
 export const MobileMenu = styled.div`
   ${({ theme, open }) => {
     return css`
-      position: fixed;
+      position: absolute;
       top: ${theme.sizes.headerHeight};
       right: 0;
       bottom: 0;
       left: 0;
-
-      z-index: 100;
 
       /* width: 80vw; */
       height: calc(100vh - ${theme.sizes.headerHeight});
@@ -69,14 +73,13 @@ export const MobileMenu = styled.div`
       align-items: center;
       justify-content: center;
 
-      /* background-color: rgba(23, 34, 52, 0.6);
-  backdrop-filter: blur(30px); */
-      background-color: ${({ theme }) => theme.colors.blackish};
+      /* background-color: ${theme.colors.blackish}; */
+      background-color: rgba(23, 34, 52, 0.8);
+      backdrop-filter: blur(55px);
 
       transition: transform 300ms linear;
 
-      transform: ${({ open }) =>
-        open ? 'translateX(0)' : 'translateX(-100%)'};
+      transform: ${open ? 'translateX(0)' : 'translateX(100vw)'};
     `;
   }}
 `;
