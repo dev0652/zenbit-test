@@ -1,13 +1,23 @@
+// Login and registration pages
 export { AuthBody } from './AuthBody';
-export { AuthNav } from './AuthNav';
-export { Card } from './Card';
-export { EmptyResults } from './EmptyResults';
-export { Error404 } from './Error404';
-export { AuthDataForm } from './Forms/AuthDataForm';
-export { SwitchForms } from './Forms/SwitchForms';
-export { TextField } from './Forms/TextField';
-export { Gallery } from './Gallery';
+export { AuthDataForm } from './authForms/AuthDataForm';
+export { SwitchForms } from './authForms/SwitchForms';
+export { TextField } from './authForms/TextField';
+
+// Auth and user menu group in header
+export { UserMenu } from './authMenuGroup/UserMenu';
+export { UserBar } from './authMenuGroup/UserBar';
+export { AuthButtons } from './authMenuGroup/AuthButtons';
+
+// Open Deals
+export { OpenDeals } from './deals/OpenDeals';
+export { Gallery } from './deals/Gallery';
+export { Card } from './deals/Card';
+export { EmptyResults } from './deals/EmptyResults';
+
+// Home page
 export { Hero } from './Hero';
-export { OpenDeals } from './OpenDeals';
+
+// Misc
 export { SharedLayout } from './SharedLayout';
-export { UserBar } from './UserBar';
+export { Error404 } from './Error404';

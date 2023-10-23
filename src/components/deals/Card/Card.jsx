@@ -1,7 +1,8 @@
+import { useState } from 'react';
+import PropTypes from 'prop-types';
+
 import { CardWrapper, Details, Image, Meta, Title } from './Card.styled';
 import placeholderImage from 'images/placeholder-image.jpg';
-import PropTypes from 'prop-types';
-import { useState } from 'react';
 
 export const Card = ({ item }) => {
   const [isImageError, setIsImageError] = useState(false);

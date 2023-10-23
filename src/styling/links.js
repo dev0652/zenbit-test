@@ -1,5 +1,5 @@
 import { styled } from 'styled-components';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const StyledLink = styled(Link)`
   color: ${({ theme }) => theme.colors.accent};
@@ -15,7 +15,7 @@ export const StyledLink = styled(Link)`
   }
 `;
 
-export const StyledNavLink = styled(NavLink)`
+export const AuthPageLink = styled(Link)`
   text-decoration: none;
   text-align: center;
 
@@ -42,7 +42,7 @@ export const StyledNavLink = styled(NavLink)`
   }
 `;
 
-export const FilledNavLink = styled(StyledNavLink)`
+export const FilledAuthPageLink = styled(AuthPageLink)`
   color: white;
   background-color: ${({ theme }) => theme.colors.accent};
 

@@ -1,21 +1,19 @@
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAuth, selectProperties } from 'redux/selectors';
-import { Outlet, useLocation } from 'react-router-dom';
-
-import { UserBar, AuthNav } from 'components';
+import { Outlet } from 'react-router-dom';
 
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import loaderOptions from 'services/loaderOptions';
 
-import { AppBar, AppBarWrapper, Container } from './SharedLayout.styled';
 import { logout, refresh } from 'redux/auth/operations';
+import Header from 'components/Header/Header';
 
 // ***************************************************
 
 export const SharedLayout = () => {
   const { isLoading } = useSelector(selectProperties);
-  const { isLoggedIn, isRefreshing, user, token } = useSelector(selectAuth);
+  const { isRefreshing, user, token } = useSelector(selectAuth);
 
   // ******* Token check *******
 
@@ -28,30 +26,13 @@ export const SharedLayout = () => {
         .catch(() => dispatch(logout())); // log out if token is outdated
   }, [dispatch, token, user]);
 
-  // ******* Location check *******
-
-  let location = useLocation();
-  const [isAuth, setIsAuth] = useState(false);
-
   useEffect(() => {
-    const path = location.pathname;
-
-    if (path === '/login' || path === '/register') {
-      setIsAuth(true);
-    } else {
-      setIsAuth(false);
-    }
-  }, [location]);
+    document.body.style.marginTop = '80px';
+  }, []);
 
   return (
     <>
-      <AppBar>
-        <Container>
-          <AppBarWrapper>
-            {isLoggedIn ? <UserBar /> : isAuth ? null : <AuthNav />}
-          </AppBarWrapper>
-        </Container>
-      </AppBar>
+      <Header />
 
       {!isRefreshing && (
         <Suspense

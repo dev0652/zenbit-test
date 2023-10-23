@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from 'styled-components';
 import { breakpoints } from 'styling/breakpoints';
 
 const { mobile, tablet, desktop, desktopWide } = breakpoints;
@@ -23,25 +23,4 @@ export const Container = styled.div`
     width: ${desktopWide};
   }
   width: 100%;
-`;
-
-export const AppBarWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-`;
-
-export const AppBar = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: end;
-
-  height: ${({ theme }) => theme.sizes.headerHeight};
-  padding: 0 80px;
-  background-color: ${({ theme }) => theme.colors.blackish};
-
-  nav {
-    display: flex;
-    gap: 10px;
-  }
 `;

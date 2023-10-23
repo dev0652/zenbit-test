@@ -13,6 +13,8 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+
+  scroll-padding-top: 100px; /* height of sticky header + 20px */
 }
 
 *,
@@ -28,8 +30,20 @@ html {
 
 body {
   font-family: 'Merriweather', serif;
-
   -webkit-font-smoothing: antialiased;
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body.mobile-menu-open {
+  overflow-y: hidden;
 }
 
 ul {
