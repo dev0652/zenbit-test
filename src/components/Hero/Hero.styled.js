@@ -7,12 +7,13 @@ import { Container } from 'components/SharedLayout/SharedLayout.styled';
 import { breakpoints } from 'styling/breakpoints';
 const { tablet, desktop, desktopWide } = breakpoints;
 
-export const Hero = styled.section`
+export const Section = styled.section`
   ${({ theme }) => {
     return css`
       height: calc(100vh - ${theme.sizes.headerHeight});
 
       background-color: ${({ theme }) => theme.colors.blackish};
+
       background: linear-gradient(
           0deg,
           rgba(23 34 52 / 60%),
@@ -33,6 +34,10 @@ export const Hero = styled.section`
             rgba(23 34 52 / 60%)
           ),
           url(${bgRetinaPath});
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
       }
     `;
   }}

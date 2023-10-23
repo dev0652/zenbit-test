@@ -1,9 +1,15 @@
-import { Home } from 'components';
 import { Helmet } from 'react-helmet-async';
+
+import { useSelector } from 'react-redux';
+import { selectProperties } from 'redux/selectors';
+
+import { Hero, OpenDeals } from 'components';
 
 // ***************************************************
 
 const HomePage = () => {
+  const { isLoading } = useSelector(selectProperties);
+
   return (
     <>
       <Helmet>
@@ -14,7 +20,9 @@ const HomePage = () => {
         />
       </Helmet>
 
-      <Home />
+      <Hero />
+
+      {!isLoading && <OpenDeals />}
     </>
   );
 };

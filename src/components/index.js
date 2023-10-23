@@ -7,7 +7,7 @@ export { AuthDataForm } from './Forms/AuthDataForm';
 export { SwitchForms } from './Forms/SwitchForms';
 export { TextField } from './Forms/TextField';
 export { Gallery } from './Gallery';
-export { Home } from './Home';
+export { Hero } from './Hero';
 export { OpenDeals } from './OpenDeals';
 export { SharedLayout } from './SharedLayout';
 export { UserBar } from './UserBar';
