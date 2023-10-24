@@ -14,9 +14,7 @@ export const Header = () => {
     <AppBar>
       <Container>
         <HeaderWrapper>
-          <LogoLink to="/" aria-label="Clickable website logo">
-            My Logo
-          </LogoLink>
+          <LogoLink to="/">My Logo</LogoLink>
           <UserMenu isMobile={isMobileWidth} />
         </HeaderWrapper>
       </Container>
