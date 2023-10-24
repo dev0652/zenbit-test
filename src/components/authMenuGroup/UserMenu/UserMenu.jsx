@@ -5,10 +5,13 @@ import { selectAuth } from 'redux/selectors';
 import PropTypes from 'prop-types';
 
 import { AuthButtons, UserBar } from 'components';
-// import { RxHamburgerMenu as BurgerIcon } from 'react-icons/rx';
-// import { AiOutlineClose as CloseIcon } from 'react-icons/ai';
-import { MobileMenu } from 'components/Header/Header.styled';
-import { BurgerButton, BurgerIcon, CloseIcon } from './UserMenu.styled';
+
+import {
+  BurgerButton,
+  BurgerIcon,
+  CloseIcon,
+  MobileMenu,
+} from './UserMenu.styled';
 
 export const UserMenu = ({ isMobile }) => {
   const { isLoggedIn } = useSelector(selectAuth);

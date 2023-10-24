@@ -1,6 +1,6 @@
 import useWindowDimensions from 'hooks/useWindowDimensions';
 import { Container } from 'components/SharedLayout/SharedLayout.styled';
-import { AppBar, HeaderWrapper, Logo } from './Header.styled';
+import { AppBar, HeaderWrapper, LogoLink } from './Header.styled';
 import { UserMenu } from 'components';
 
 import { breakpoints } from 'styling/breakpoints';
@@ -14,7 +14,7 @@ export const Header = () => {
     <AppBar>
       <Container>
         <HeaderWrapper>
-          <Logo>My Logo</Logo>
+          <LogoLink to="/">My Logo</LogoLink>
           <UserMenu isMobile={isMobileWidth} />
         </HeaderWrapper>
       </Container>

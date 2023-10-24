@@ -1,23 +1,7 @@
-import { styled, css } from 'styled-components';
+import { styled } from 'styled-components';
 import { breakpoints } from 'styling/breakpoints';
+import { StyledLink } from 'styling/links';
 const { tablet, desktop } = breakpoints;
-
-export const Logo = styled.p`
-  color: ${({ theme }) => theme.colors.accent};
-  line-height: 121.429%;
-  font-family: Lato;
-  font-weight: bold;
-
-  font-size: 22px;
-
-  @media screen and (min-width: ${tablet}) {
-    font-size: 24px;
-  }
-
-  @media screen and (min-width: ${desktop}) {
-    font-size: 28px;
-  }
-`;
 
 export const AppBar = styled.header`
   position: fixed;
@@ -43,11 +27,6 @@ export const AppBar = styled.header`
   @media screen and (min-width: ${desktop}) {
     padding: 0 80px;
   }
-
-  nav {
-    display: flex;
-    gap: 10px;
-  }
 `;
 
 export const HeaderWrapper = styled.div`
@@ -56,30 +35,29 @@ export const HeaderWrapper = styled.div`
   align-items: center;
 `;
 
-export const MobileMenu = styled.div`
-  ${({ theme, open }) => {
-    return css`
-      position: absolute;
-      top: ${theme.sizes.headerHeight};
-      right: 0;
-      bottom: 0;
-      left: 0;
+export const LogoLink = styled(StyledLink)`
+  color: ${({ theme }) => theme.colors.accent};
+  line-height: 121.429%;
+  font-family: Lato;
+  font-weight: bold;
 
-      /* width: 80vw; */
-      height: calc(100vh - ${theme.sizes.headerHeight});
+  font-size: 22px;
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+  @media screen and (min-width: ${tablet}) {
+    font-size: 24px;
+  }
 
-      /* background-color: ${theme.colors.blackish}; */
-      background-color: rgba(23, 34, 52, 0.8);
-      backdrop-filter: blur(55px);
+  @media screen and (min-width: ${desktop}) {
+    font-size: 28px;
+  }
 
-      transition: transform 300ms linear;
+  &:hover,
+  &:focus-visible {
+    text-decoration: none;
+    color: silver;
+  }
 
-      transform: ${open ? 'translateX(0)' : 'translateX(100vw)'};
-    `;
-  }}
+  &:active {
+    color: ${({ theme }) => theme.colors.accentDark};
+  }
 `;

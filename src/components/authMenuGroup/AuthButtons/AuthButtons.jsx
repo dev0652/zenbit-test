@@ -4,12 +4,14 @@ import PropTypes from 'prop-types';
 
 export const AuthButtons = ({ isMobile = false, menuToggler = null }) => {
   return (
-    <Wrapper $mobile={isMobile}>
-      <AuthPageLink to="login" onClick={isMobile && menuToggler}>
+    <Wrapper
+    // $mobile={isMobile}
+    >
+      <AuthPageLink to="/login" onClick={isMobile && menuToggler}>
         Log in
       </AuthPageLink>
 
-      <FilledAuthPageLink to="register" onClick={isMobile && menuToggler}>
+      <FilledAuthPageLink to="/register" onClick={isMobile && menuToggler}>
         Sign Up
       </FilledAuthPageLink>
     </Wrapper>
