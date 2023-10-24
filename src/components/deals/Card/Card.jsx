@@ -58,6 +58,7 @@ export const Card = ({ item }) => {
             }}
           >
             <Title>{propertyName}</Title>
+
             <Details>
               <li>{formattedPrice}</li>
               <li>Ticket - {formattedTicketPrice}</li>

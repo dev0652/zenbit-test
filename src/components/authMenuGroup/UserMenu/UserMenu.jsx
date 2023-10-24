@@ -47,7 +47,11 @@ export const UserMenu = ({ isMobile }) => {
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   const burgerMenuButton = (
-    <BurgerButton type="button" onClick={toggleMobileMenu}>
+    <BurgerButton
+      type="button"
+      onClick={toggleMobileMenu}
+      aria-label="Mobile menu toggle"
+    >
       {mobileMenuVisible ? <CloseIcon /> : <BurgerIcon />}
     </BurgerButton>
   );
