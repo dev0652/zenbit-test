@@ -15,13 +15,11 @@ import {
 } from './AuthDataForm.styled';
 
 import PropTypes from 'prop-types';
-import { selectAuth } from 'redux/selectors';
 
 // ***************************************************
 
 export const AuthDataForm = ({ formType }) => {
   const dispatch = useDispatch();
-  const { error } = useSelector(selectAuth);
 
   const isSignUp = formType === 'register';
   let title, buttonText, toastMessage, operation;
@@ -29,12 +27,12 @@ export const AuthDataForm = ({ formType }) => {
   if (isSignUp) {
     title = 'Create an account';
     buttonText = 'Sign up';
-    toastMessage = 'Registration successful. Please check your mailbox';
+    toastMessage = 'Registration successful';
     operation = register;
   } else {
     title = 'Login';
     buttonText = 'Sign in';
-    toastMessage = 'Logged in, redirecting...';
+    toastMessage = 'Login successful';
     operation = login;
   }
 
@@ -53,11 +51,7 @@ export const AuthDataForm = ({ formType }) => {
     dispatch(operation(credentials))
       .unwrap()
       .then(() => toast.success(toastMessage))
-      .catch(message =>
-        toast.error(message, {
-          duration: 4000,
-        })
-      );
+      .catch(msg => toast.error(msg, { duration: 4000 }));
 
     form.reset();
   };
