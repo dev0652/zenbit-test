@@ -25,7 +25,7 @@ export const FieldsWrapper = styled.div`
   flex-direction: column;
   gap: 20px;
 
-  margin-bottom: 10px;
+  margin-bottom: ${({ $isSignUp }) => ($isSignUp ? '40px' : '10px')};
 `;
 
 export const ForgotPassword = styled.button`

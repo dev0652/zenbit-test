@@ -24,18 +24,16 @@ export const AuthDataForm = ({ formType }) => {
   const isSignUp = formType === 'register';
   let title, buttonText, toastMessage, operation;
 
-  if (formType === 'login') {
-    title = 'Login';
-    buttonText = 'Sign in';
-    toastMessage = 'Login successful';
-    operation = login;
-  }
-
   if (isSignUp) {
     title = 'Create an account';
     buttonText = 'Sign up';
     toastMessage = 'Registration successful';
     operation = register;
+  } else {
+    title = 'Login';
+    buttonText = 'Sign in';
+    toastMessage = 'Login successful';
+    operation = login;
   }
 
   const handleSubmit = event => {
@@ -63,7 +61,7 @@ export const AuthDataForm = ({ formType }) => {
       <section>
         <Title>{title}</Title>
         <FormWrapper onSubmit={handleSubmit}>
-          <FieldsWrapper>
+          <FieldsWrapper $isSignUp={isSignUp}>
             {/* Name */}
             {isSignUp && <TextField name="name" />}
             {/* Email */}
@@ -77,7 +75,9 @@ export const AuthDataForm = ({ formType }) => {
             />
           </FieldsWrapper>
 
-          <ForgotPassword type="button">Forgot password?</ForgotPassword>
+          {!isSignUp && (
+            <ForgotPassword type="button">Forgot password?</ForgotPassword>
+          )}
 
           <ButtonGroup>
             <SubmitButton type="submit">{buttonText}</SubmitButton>
