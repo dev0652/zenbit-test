@@ -26,7 +26,7 @@ export const App = () => {
           <Route
             path="/register"
             element={
-              <RestrictedRoute redirectTo="hvhfkhf">
+              <RestrictedRoute>
                 <RegisterPage />
               </RestrictedRoute>
             }
