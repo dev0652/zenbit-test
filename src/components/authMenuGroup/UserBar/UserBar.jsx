@@ -25,7 +25,7 @@ export const UserBar = () => {
     <Wrapper>
       <User>
         <UserIcon />
-        <UserName>{name || 'Signed in'}</UserName>
+        <UserName>{name}</UserName>
       </User>
       <LogoutButton type="button" onClick={handleLogout}>
         Sign Out

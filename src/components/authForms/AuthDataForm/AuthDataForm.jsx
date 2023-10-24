@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { login, register } from 'redux/auth/operations';
 import { toast } from 'react-hot-toast';
 
@@ -15,11 +15,13 @@ import {
 } from './AuthDataForm.styled';
 
 import PropTypes from 'prop-types';
+import { selectAuth } from 'redux/selectors';
 
 // ***************************************************
 
 export const AuthDataForm = ({ formType }) => {
   const dispatch = useDispatch();
+  const { error } = useSelector(selectAuth);
 
   const isSignUp = formType === 'register';
   let title, buttonText, toastMessage, operation;
@@ -27,12 +29,12 @@ export const AuthDataForm = ({ formType }) => {
   if (isSignUp) {
     title = 'Create an account';
     buttonText = 'Sign up';
-    toastMessage = 'Registration successful';
+    toastMessage = 'Registration successful. Please check your mailbox';
     operation = register;
   } else {
     title = 'Login';
     buttonText = 'Sign in';
-    toastMessage = 'Login successful';
+    toastMessage = 'Logged in, redirecting...';
     operation = login;
   }
 
@@ -51,7 +53,11 @@ export const AuthDataForm = ({ formType }) => {
     dispatch(operation(credentials))
       .unwrap()
       .then(() => toast.success(toastMessage))
-      .catch(() => toast.error('Authentication error'));
+      .catch(message =>
+        toast.error(message, {
+          duration: 4000,
+        })
+      );
 
     form.reset();
   };
@@ -64,8 +70,10 @@ export const AuthDataForm = ({ formType }) => {
           <FieldsWrapper $isSignUp={isSignUp}>
             {/* Name */}
             {isSignUp && <TextField name="name" />}
+
             {/* Email */}
             <TextField type="email" name="email" />
+
             {/* Password */}
             <TextField
               type="password"

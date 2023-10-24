@@ -16,7 +16,7 @@ const generateOperation = actionType => {
 
         return await api.refresh(token);
       } catch (error) {
-        return rejectWithValue(error.response.statusText);
+        return rejectWithValue(error.response.data.message);
       }
     };
 

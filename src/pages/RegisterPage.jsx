@@ -1,6 +1,5 @@
 import { Helmet } from 'react-helmet-async';
 import { AuthDataForm, AuthBody } from 'components';
-import { FlexCentered } from 'styling/positioning';
 
 const RegisterPage = () => {
   return (
@@ -13,11 +12,9 @@ const RegisterPage = () => {
         />
       </Helmet>
 
-      <FlexCentered>
-        <AuthBody>
-          <AuthDataForm formType="register" />
-        </AuthBody>
-      </FlexCentered>
+      <AuthBody>
+        <AuthDataForm formType="register" />
+      </AuthBody>
     </>
   );
 };

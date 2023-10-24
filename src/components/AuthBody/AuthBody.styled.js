@@ -9,12 +9,12 @@ const { desktop } = breakpoints;
 export const Page = styled.div`
   ${({ theme }) => {
     return css`
-      display: flex;
-      flex-direction: column;
+      /* display: flex;
+      flex-direction: column; */
       height: calc(100vh - ${theme.sizes.headerHeight});
 
       @media screen and (min-width: ${desktop}) {
-        flex-direction: row;
+        display: flex;
         width: 100%;
       }
     `;
@@ -47,9 +47,12 @@ export const BannerSide = styled.div`
 `;
 
 export const FormSide = styled.div`
-  min-width: 38%;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+
+  @media screen and (min-width: ${desktop}) {
+    min-width: 38%;
+  }
 `;

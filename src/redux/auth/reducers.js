@@ -16,14 +16,11 @@ export const handleFulfilled = state => {
 
 // Register
 export const handleRegisterFulfilled = (state, { payload }) => {
-  state.user = payload.user;
-  state.token = payload.token;
-  state.isLoggedIn = true;
+  state.user = payload;
 };
 
 // Log in
 export const handleLoginFulfilled = (state, { payload }) => {
-  console.log('payload in handleLoginFulfilled: ', payload);
   state.user = payload.user;
   state.token = payload.token;
   state.isLoggedIn = true;
