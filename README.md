@@ -1,7 +1,7 @@
 # Noname Property Investments Website
 The website lets interested investors browse through a collection of properties avalable for purchase in Dubai, United Arab Emirates.
 
-![Screenshot of the website's hero block depicting skyscrapper landscape](https://pasteboard.co/XuMoBTbj9RzC.png)
+![Screenshot of the website's hero block depicting skyscrapper landscape](https://gcdnb.pbrd.co/images/XuMoBTbj9RzC.png)
 
 ## Functionality
 The website offers authorization functionality. Newly registered users will need to verify their email by following a link sent to their mailbox before being able to log in with their account. Once logged in, a username is displayed in the user bar alongside with the Sign Out button.
