@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { login, register } from 'redux/auth/operations';
 import { toast } from 'react-hot-toast';
 
