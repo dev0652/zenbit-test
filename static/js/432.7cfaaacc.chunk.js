@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkzenbit_test=self.webpackChunkzenbit_test||[]).push([[432],{8432:function(e,t,s){s.r(t);var n=s(6907),r=s(9915),i=s(3329);t.default=function(){return(0,i.jsxs)(i.Fragment,{children:[(0,i.jsxs)(n.ql,{children:[(0,i.jsx)("title",{children:"Register"}),(0,i.jsx)("meta",{name:"description",content:"Register to see your personalized items"})]}),(0,i.jsx)(r.CS,{children:(0,i.jsx)(r.kW,{formType:"register"})})]})}}}]);
+//# sourceMappingURL=432.7cfaaacc.chunk.js.map
