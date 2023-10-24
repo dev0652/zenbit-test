@@ -42,6 +42,7 @@ export const Image = styled.img`
 export const Thumbnail = styled.div`
   position: relative;
   overflow: hidden;
+height: 100%;
 `;
 
 export const Overlay = styled.div`
