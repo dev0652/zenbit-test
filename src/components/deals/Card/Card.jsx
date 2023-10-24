@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import { CardWrapper, Details, Image, Meta, Title } from './Card.styled';
+import {
+  CardWrapper,
+  Details,
+  Image,
+  Meta,
+  Overlay,
+  Thumbnail,
+  Title,
+} from './Card.styled';
 import placeholderImage from 'images/placeholder-image.jpg';
 
 export const Card = ({ item }) => {
@@ -23,38 +31,43 @@ export const Card = ({ item }) => {
   const formattedYield = formatPercentage(yieldValue);
   const formattedSold = formatPercentage(sold);
 
-  // /* offset-x | offset-y | blur-radius | color */
-
   return (
     <CardWrapper>
-      <Image
-        src={imageLink || placeholderImage}
-        onError={({ currentTarget }) => {
-          currentTarget.onerror = null; // prevents looping
-          currentTarget.src = placeholderImage;
-          setIsImageError(true);
-        }}
-        width={630}
-        height={400}
-        alt={propertyName}
-      />
-      <Meta
-        style={{
-          color: `${isImageError ? 'black' : 'white'}`,
-          textShadow: `${
-            isImageError ? 'none' : '1px 1px 15px black, -1px -1px 15px black'
-          }`,
-        }}
-      >
-        <Title>{propertyName}</Title>
-        <Details>
-          <li>{formattedPrice}</li>
-          <li>Ticket - {formattedTicketPrice}</li>
-          <li>Yield {formattedYield}</li>
-          <li>Days left {daysLeft}</li>
-          <li>Sold {formattedSold}</li>
-        </Details>
-      </Meta>
+      <Thumbnail>
+        <Image
+          src={imageLink || placeholderImage}
+          onError={({ currentTarget }) => {
+            currentTarget.onerror = null; // prevents looping
+            currentTarget.src = placeholderImage;
+            setIsImageError(true);
+          }}
+          width={630}
+          height={400}
+          alt={propertyName}
+        />
+
+        <Overlay>
+          <Meta
+            style={{
+              color: `${isImageError ? 'black' : 'white'}`,
+              textShadow: `${
+                isImageError
+                  ? 'none'
+                  : '1px 1px 15px black, -1px -1px 15px black'
+              }`,
+            }}
+          >
+            <Title>{propertyName}</Title>
+            <Details>
+              <li>{formattedPrice}</li>
+              <li>Ticket - {formattedTicketPrice}</li>
+              <li>Yield {formattedYield}</li>
+              <li>Days left {daysLeft}</li>
+              <li>Sold {formattedSold}</li>
+            </Details>
+          </Meta>
+        </Overlay>
+      </Thumbnail>
     </CardWrapper>
   );
 };

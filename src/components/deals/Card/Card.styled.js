@@ -39,13 +39,40 @@ export const Image = styled.img`
   object-position: center;
 `;
 
-export const Meta = styled.div`
+export const Thumbnail = styled.div`
+  position: relative;
+  overflow: hidden;
+`;
+
+export const Overlay = styled.div`
   position: absolute;
+  top: 0;
   left: 0;
+  right: 0;
   bottom: 0;
 
-  padding: 0 0 20px 14px;
+  transition: background-color 300ms;
+
   width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+
+  ${CardWrapper}:hover & {
+    background-color: rgba(23, 34, 52, 0.3);
+  }
+`;
+
+export const Meta = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  height: 100%;
+  width: 100%;
+
+  padding: 0 0 20px 14px;
 `;
 
 export const Title = styled.h3`
