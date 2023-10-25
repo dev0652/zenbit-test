@@ -7,8 +7,8 @@ import { Toaster } from 'react-hot-toast';
 
 import { SharedLayout } from 'components';
 import { NotFound } from 'pages/NotFound';
+import HomePage from 'pages/HomePage';
 
-const HomePage = lazy(() => import('pages/HomePage'));
 const LoginPage = lazy(() => import('pages/LoginPage'));
 const RegisterPage = lazy(() => import('pages/RegisterPage'));
 
