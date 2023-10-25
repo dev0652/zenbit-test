@@ -4,9 +4,15 @@ import {
   HeroContainer,
   HomeText,
   HomeTitle,
+  SpinnerContainer,
 } from './Hero.styled';
 
+import { useSelector } from 'react-redux';
+import { selectProperties } from 'redux/selectors';
+
 export const Hero = () => {
+  const { isLoading } = useSelector(selectProperties);
+
   return (
     <Section>
       <HeroContainer>
@@ -18,7 +24,15 @@ export const Hero = () => {
           chemical compound is negatively charged. While the mass defect is
         </HomeText>
 
-        <Anchor href="#openDeals">Get Started</Anchor>
+        {isLoading ? (
+          <>
+            <SpinnerContainer>
+              <div className="dot-pulse"></div>
+            </SpinnerContainer>
+          </>
+        ) : (
+          <Anchor href="#openDeals">Get Started</Anchor>
+        )}
       </HeroContainer>
     </Section>
   );

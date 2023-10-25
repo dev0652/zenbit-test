@@ -102,6 +102,7 @@ export const Anchor = styled.a`
   line-height: 170%;
 
   color: white;
+
   text-decoration: none;
 
   &:hover,
@@ -116,4 +117,12 @@ export const Anchor = styled.a`
     border-color: silver;
     background-color: silver;
   }
+`;
+
+export const SpinnerContainer = styled.div`
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

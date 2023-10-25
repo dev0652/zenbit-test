@@ -1,6 +1,6 @@
 import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectAuth, selectProperties } from 'redux/selectors';
+import { selectAuth } from 'redux/selectors';
 import { Outlet } from 'react-router-dom';
 
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
@@ -12,7 +12,6 @@ import { Header } from 'components';
 // ***************************************************
 
 export const SharedLayout = () => {
-  const { isLoading } = useSelector(selectProperties);
   const { isRefreshing, user, token } = useSelector(selectAuth);
 
   // ******* Token check *******
@@ -23,8 +22,7 @@ export const SharedLayout = () => {
     if (token && !user.name)
       dispatch(refresh())
         .unwrap()
-        // .catch(localStorage.removeItem('persist:auth')); // clear LS if token is outdated
-        .catch(e => console.log(e)); // clear LS if token is outdated
+        .catch(localStorage.removeItem('persist:auth')); // clear LS if token is outdated
   }, [dispatch, token, user.name]);
 
   useEffect(() => {
@@ -35,15 +33,13 @@ export const SharedLayout = () => {
     <>
       <Header />
 
-      {!isRefreshing && (
-        <Suspense
-          fallback={isLoading ? Loading.dots(loaderOptions) : Loading.remove()}
-        >
-          <main>
-            <Outlet />
-          </main>
-        </Suspense>
-      )}
+      <Suspense
+        fallback={isRefreshing ? Loading.dots(loaderOptions) : Loading.remove()}
+      >
+        <main>
+          <Outlet />
+        </main>
+      </Suspense>
     </>
   );
 };

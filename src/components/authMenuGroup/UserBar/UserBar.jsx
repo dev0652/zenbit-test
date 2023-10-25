@@ -21,9 +21,9 @@ export const UserBar = () => {
   const handleLogout = () => {
     dispatch(logout({ email }))
       .unwrap()
-      .then(() => toast.success('Signed out'))
+      .then()
       .catch(msg => {
-        toast.error('Sorry, an unexpected error occurred');
+        toast.error(errorMsg);
         console.error(msg);
       });
   };
@@ -40,3 +40,5 @@ export const UserBar = () => {
     </Wrapper>
   );
 };
+
+const errorMsg = 'Sorry, an unexpected error occurred';

@@ -22,17 +22,15 @@ export const AuthDataForm = ({ formType }) => {
   const dispatch = useDispatch();
 
   const isSignUp = formType === 'register';
-  let title, buttonText, toastMessage, operation;
+  let title, buttonText, operation;
 
   if (isSignUp) {
     title = 'Create an account';
     buttonText = 'Sign up';
-    toastMessage = 'Registration successful';
     operation = register;
   } else {
     title = 'Login';
     buttonText = 'Sign in';
-    toastMessage = 'Login successful';
     operation = login;
   }
 
@@ -50,7 +48,7 @@ export const AuthDataForm = ({ formType }) => {
 
     dispatch(operation(credentials))
       .unwrap()
-      .then(() => toast.success(toastMessage))
+      .then()
       .catch(msg => toast.error(msg, { duration: 4000 }));
 
     form.reset();

@@ -1,4 +1,8 @@
-/* @import-normalize; */
+@use 'three-dots' with (
+  $dot-width: 15px,
+  $dot-height: 15px,
+  $dot-color: #b29f7e
+);
 
 :root {
   -webkit-font-smoothing: antialiased;

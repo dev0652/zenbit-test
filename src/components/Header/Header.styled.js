@@ -36,7 +36,7 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const LogoLink = styled(StyledLink)`
-  color: ${({ theme }) => theme.colors.accent};
+  color: silver;
   line-height: 121.429%;
   font-family: Lato;
   font-weight: bold;
@@ -54,7 +54,7 @@ export const LogoLink = styled(StyledLink)`
   &:hover,
   &:focus-visible {
     text-decoration: none;
-    color: silver;
+    color: whitesmoke;
   }
 
   &:active {
