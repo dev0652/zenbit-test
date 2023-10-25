@@ -9,6 +9,7 @@ import {
   User,
 } from './UserBar.styled';
 import { logout } from 'redux/auth/operations';
+import toast from 'react-hot-toast';
 
 export const UserBar = () => {
   const {
@@ -18,7 +19,10 @@ export const UserBar = () => {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-    dispatch(logout(email));
+    dispatch(logout({ email }))
+      .unwrap()
+      .then(() => toast.success('You have signed out of your account'))
+      .catch(msg => toast.error(msg, { duration: 4000 }));
   };
 
   return (
