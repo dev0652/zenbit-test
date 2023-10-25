@@ -21,8 +21,11 @@ export const UserBar = () => {
   const handleLogout = () => {
     dispatch(logout({ email }))
       .unwrap()
-      .then(() => toast.success('You have signed out of your account'))
-      .catch(msg => toast.error(msg, { duration: 4000 }));
+      .then(() => toast.success('Signed out'))
+      .catch(msg => {
+        toast.error('Sorry, an unexpected error occurred');
+        console.error(msg);
+      });
   };
 
   return (
