@@ -17,8 +17,8 @@ export const login = async credentials => {
   return data;
 };
 
-export const logout = async () => {
-  const { data } = await axios.post('/auth/logout');
+export const logout = async email => {
+  const { data } = await axios.post('/auth/logout', email);
   clearAuthHeader();
   return data;
 };

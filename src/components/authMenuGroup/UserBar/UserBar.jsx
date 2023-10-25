@@ -12,13 +12,13 @@ import { logout } from 'redux/auth/operations';
 
 export const UserBar = () => {
   const {
-    user: { name },
+    user: { name, email },
   } = useSelector(selectAuth);
 
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-    dispatch(logout());
+    dispatch(logout(email));
   };
 
   return (
