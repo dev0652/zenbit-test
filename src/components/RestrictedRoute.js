@@ -1,14 +1,9 @@
 import { useSelector } from 'react-redux';
-import { Navigate, useLocation } from 'react-router-dom';
-import { selectToken } from 'redux/selectors';
+import { Navigate } from 'react-router-dom';
+import { selectAuth } from 'redux/selectors';
 
-export const RestrictedRoute = ({ children, redirectTo }) => {
-  const isToken = useSelector(selectToken);
-  const location = useLocation();
+export const RestrictedRoute = ({ children, redirectTo = '/' }) => {
+  const { isLoggedIn } = useSelector(selectAuth);
 
-  return !isToken ? (
-    children
-  ) : (
-    <Navigate to={location.state ?? redirectTo} state={location} />
-  ); // take the user back to where he came from
+  return isLoggedIn ? <Navigate to={redirectTo} /> : children;
 };

@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import loaderOptions from 'services/loaderOptions';
 
-import { logout, refresh } from 'redux/auth/operations';
+import { refresh } from 'redux/auth/operations';
 import { Header } from 'components';
 
 // ***************************************************
@@ -21,10 +21,11 @@ export const SharedLayout = () => {
 
   useEffect(() => {
     if (token && !user.name)
-      dispatch(refresh(token))
+      dispatch(refresh())
         .unwrap()
-        .catch(() => dispatch(logout())); // log out if token is outdated
-  }, [dispatch, token, user]);
+        // .catch(localStorage.removeItem('persist:auth')); // clear LS if token is outdated
+        .catch(e => console.log(e)); // clear LS if token is outdated
+  }, [dispatch, token, user.name]);
 
   useEffect(() => {
     document.body.style.marginTop = '80px';

@@ -27,7 +27,7 @@ export const UserMenu = ({ isMobile }) => {
     } else {
       setIsAuth(false);
     }
-  }, [location]);
+  }, [location.pathname]);
 
   const [mobileMenuVisible, setMobileMenuVisible] = useState(false);
 

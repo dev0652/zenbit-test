@@ -45,7 +45,7 @@ export const handleRefreshRejected = state => {
 };
 
 export const handleRefreshFulfilled = (state, { payload }) => {
-  state.user = payload;
+  state.user = payload.user;
   state.isLoggedIn = true;
   state.isRefreshing = false;
 };
