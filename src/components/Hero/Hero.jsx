@@ -5,8 +5,6 @@ import {
   HomeText,
   HomeTitle,
   SpinnerContainer,
-  SpinnerText,
-  SpinnerWrapper,
 } from './Hero.styled';
 
 import { useSelector } from 'react-redux';
