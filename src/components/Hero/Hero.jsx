@@ -27,13 +27,11 @@ export const Hero = () => {
         </HomeText>
 
         {isLoading ? (
-          <SpinnerWrapper>
+          <>
             <SpinnerContainer>
               <div className="dot-pulse"></div>
             </SpinnerContainer>
-
-            <SpinnerText>Awaiting response from render.com ...</SpinnerText>
-          </SpinnerWrapper>
+          </>
         ) : (
           <Anchor href="#openDeals">Get Started</Anchor>
         )}

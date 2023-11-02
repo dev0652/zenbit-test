@@ -121,20 +121,20 @@ export const Anchor = styled.a`
   }
 `;
 
-export const SpinnerWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-`;
+// export const SpinnerWrapper = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   gap: 10px;
+// `;
 
-export const SpinnerText = styled.p`
-  font-family: Merriweather;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: ${theme.colors.accent};
+// export const SpinnerText = styled.p`
+//   font-family: Merriweather;
+//   font-size: 1.1rem;
+//   font-weight: bold;
+//   color: ${theme.colors.accent};
 
-  text-shadow: 1px 1px 10px black;
-`;
+//   text-shadow: 1px 1px 10px black;
+// `;
 
 export const SpinnerContainer = styled.div`
   height: 42px;
