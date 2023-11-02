@@ -4,6 +4,8 @@ import bgPath from 'images/homebg.jpg';
 import bgRetinaPath from 'images/homebg@2x.jpg';
 import { Container } from 'components/SharedLayout/SharedLayout.styled';
 
+import { theme } from 'styling/theme';
+
 import { breakpoints } from 'styling/breakpoints';
 const { tablet, desktop, desktopWide } = breakpoints;
 
@@ -117,6 +119,21 @@ export const Anchor = styled.a`
     border-color: silver;
     background-color: silver;
   }
+`;
+
+export const SpinnerWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+export const SpinnerText = styled.p`
+  font-family: Merriweather;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: ${theme.colors.accent};
+
+  text-shadow: 1px 1px 10px black;
 `;
 
 export const SpinnerContainer = styled.div`
