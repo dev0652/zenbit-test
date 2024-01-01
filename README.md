@@ -1,9 +1,9 @@
-# Noname Property Investments Website
+# A Noname Property Investments Website
 
 The website lets interested investors browse through a collection of properties
 avalable for purchase in Dubai, United Arab Emirates.
 
-![Screenshot of the website's hero block depicting skyscrapper landscape](https://gcdnb.pbrd.co/images/XuMoBTbj9RzC.png)
+![Screenshot of the website's hero block depicting skyscrapper landscape](/assets/screenshot.png)
 
 ## Functionality
 
